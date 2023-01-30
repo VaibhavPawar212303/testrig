@@ -61,7 +61,7 @@ function AreaChart() {
           <div className="mt-60 mb-10">
             <h1 className="ml-32 w-30 text-xl">Build Report</h1>
             <LineChart
-              width={1000}
+              width={900}
               height={340}
               data={data}
               margin={{ top: 5, right: 30, left: 20, bottom: 5 }}

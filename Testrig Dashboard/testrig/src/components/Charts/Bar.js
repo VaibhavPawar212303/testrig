@@ -44,10 +44,10 @@ const data = [
 function Bars() {
   return (
     <>
-      <div className="absolute mt-96 ml-72 grid grid-cols-2 w-8/12 mb-3">
-        <div className="col-start-1 ml-30">
+      <div className="absolute mt-96 ml-70 grid grid-cols-2 w-8/12 mb-3">
+        <div className="col-start-1 ml-72">
           <h1 className="w-30 text-xl mb-5">TestCases Report</h1>
-          <BarChart width={930} height={350} data={data}>
+          <BarChart width={830} height={350} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis dataKey="testcases_pass" />
