@@ -1,16 +1,21 @@
-//import the packages
-const express = require('express');
-const dotenv  = require('dotenv').config;
-const colors  =  require('colors');
+//import packages
+const express = require("express");
+const color = require("colors");
+const dotenv = require("dotenv").config();
+const fs = require("fs");
+const cors = require('cors')
 
-//create the port 
-const PORT = process.env.PORT || 8000
-
-//create the app
-const app  =  express();
-
-//start the server 
-app.listen(PORT,()=>{
-  console.log(`APP IS RUNNING ON PORT ${PORT}`.red.underline)
-})
-
+PORT = process.env.PORT;
+//middleware
+const { errorHandler } = require("../Backhend/middleware/errorMiddleware");
+//app create
+const app = express();
+//app use
+app.use(express.urlencoded({ extended: true }));
+app.use(cors())
+app.use("/api/project", require("../Backhend/Routes/projectRoute"));
+app.use(errorHandler);
+//app listen on port
+app.listen(PORT, () => {
+  console.log(`APP IS LISTENING ON PORT ${PORT}`.cyan.underline);
+});
