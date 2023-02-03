@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      uri : mongodb://localhost:27023/tasks
+      #mongodb://host.docker.internal:27023/Task
+      #mongodb://192.168.1.112:27023/tasks
+      database : Task
+
+#spring:
+#  data:
+#    mongodb:
+#      uri : mongodb+srv://Aprajput:Akshay9599@cluster0.sh2toj7.mongodb.net/Task
+#      database : Task
