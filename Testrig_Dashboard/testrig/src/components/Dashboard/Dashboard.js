@@ -7,18 +7,29 @@ import RadialpieChart from "../Charts/RadialpieChart";
 import Timeline from "../Timeline/Timeline";
 import AreaChart from "../Charts/AreaChart";
 import Footer from "../Footer/Footer";
+import { BrowserRouter } from "react-router-dom";
+// const cores = require('cors');
+// fetch("https://06f6-49-248-198-70.in.ngrok.io/tasks", { mode: "cors" })
+//   .then((response) => {
+//     console.log(response.json());
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 function Dashboard() {
   return (
     <>
-      <Navbar />
-      <PieCharts />
-      <RadialpieChart />
-      <Bars />
-      {/* <Integration /> */}
-      <Timeline />
-      <AreaChart/>
-      <Footer/>
+      <BrowserRouter>
+        <Navbar />
+        <PieCharts />
+        <RadialpieChart />
+        <Bars />
+        {/* <Integration /> */}
+        <Timeline />
+        <AreaChart />
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
