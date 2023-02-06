@@ -5,7 +5,7 @@ const dotenv = require("dotenv").config();
 const fs = require("fs");
 const cors = require('cors')
 
-PORT = process.env.PORT;
+PORT = process.env.PORT || 8000;
 //middleware
 const { errorHandler } = require("../backhend/middleWare/errorMiddleware");
 //app create

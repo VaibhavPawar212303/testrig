@@ -1,1 +1,91 @@
-[{"id":1,"projectName":"Clippd","projectDesc":"This is the Clippd golf project"},{"id":2,"projectName":"Operence","projectDesc":"This application related to the ecommerce"},{"id":3,"projectName":"Tracking Owl","projectDesc":"This application related to health"},{"id":4,"projectName":"Corecard","projectDesc":"This application related to the ecommerce"},{"id":5,"projectName":"Javier","projectDesc":"Application related to the education"},{"id":6,"projectName":"Timesuit","projectDesc":"This application related to the ecommerce"},{"id":7,"projectName":"Test","projectDesc":"Demo project created for testing"},{"id":8,"projectName":"Test","projectDesc":"Application related to the test"}]
+[
+  {
+    "id": 1,
+    "projectName": "Clippd",
+    "projectDesc": "This is the Clippd golf project",
+    "report": [
+      {
+        "report_id": 1,
+        "build_name": "Regression suit",
+        "build_date": "20/10/2021",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12
+      },
+      {
+        "report_id": 2,
+        "build_name": "smoke suit",
+        "build_date": "20/1/2022",
+        "total_test": 40,
+        "total_test_pass": 40,
+        "total_test_fail": 0
+      },
+      {
+        "report_id": 3,
+        "build_name": "visual suit",
+        "build_date": "20/6/2023",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12
+      },
+      {
+        "report_id": 4,
+        "build_name": "Regression suit",
+        "build_date": "23/6/2023",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12
+      },
+      {
+        "report_id": 5,
+        "build_name": "Smoke suit",
+        "build_date": "20/7/2023",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "projectName": "Operence",
+    "projectDesc": "This application related to the ecommerce",
+    "report": []
+  },
+  {
+    "id": 3,
+    "projectName": "Tracking owl",
+    "projectDesc": "This application related to health",
+    "report": []
+  },
+  {
+    "id": 4,
+    "projectName": "CoreCard",
+    "projectDesc": "This application related to the ecommerce",
+    "report": []
+  },
+  {
+    "id": 5,
+    "projectName": "Javier",
+    "projectDesc": "Application related to the education",
+    "report": []
+  },
+  {
+    "id": 6,
+    "projectName": "Timesuit",
+    "projectDesc": "This application related to the ecommerce",
+    "report": []
+  },
+  {
+    "id": 7,
+    "projectName": "Test",
+    "projectDesc": "Demo project created for testing",
+    "report": []
+  },
+  {
+    "id": 8,
+    "projectName": "Test",
+    "projectDesc": "Application related to the test",
+    "report": []
+  }
+]

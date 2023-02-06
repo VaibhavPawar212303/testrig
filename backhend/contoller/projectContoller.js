@@ -43,30 +43,20 @@ const updateProject = (req, res) => {
   const id = req.params.id;
   const { proName, proDesc } = req.body;
 
-  fsPromises
-    .readFile(
-      "project.json",
-      "utf-8"
-    )
-    .then((data) => {
-      let json = JSON.parse(data);
-      var arrayLen = json.length;
-      for (var i = 0; i < arrayLen; i++) {
-        if (json[i].id == id) {
-          json[i].projectName = `${proName}`;
-          json[i].projectDesc = `${proDesc}`;
-        }
+  fsPromises.readFile("project.json", "utf-8").then((data) => {
+    let json = JSON.parse(data);
+    var arrayLen = json.length;
+    for (var i = 0; i < arrayLen; i++) {
+      if (json[i].id == id) {
+        json[i].projectName = `${proName}`;
+        json[i].projectDesc = `${proDesc}`;
       }
+    }
 
-      fsPromises
-        .writeFile(
-          "project.json",
-          JSON.stringify(json)
-        )
-        .then(() => {
-          res.status(200).json(json[id - 1].proName);
-        });
+    fsPromises.writeFile("project.json", JSON.stringify(json)).then(() => {
+      res.status(200).json(json[id - 1].proName);
     });
+  });
 };
 
 const deleteProject = (req, res) => {
@@ -84,9 +74,44 @@ const deleteProject = (req, res) => {
   });
 };
 
+const getOneProject = (req, res) => {
+  const id = req.params.id;
+
+  fsPromises.readFile("project.json", "utf-8").then((data) => {
+    let json = JSON.parse(data);
+    var arrayLen = json.length;
+    for (var i = 0; i < arrayLen; i++) {
+      if (json[i].id == id) {
+        res.json(json[i]);
+      }
+    }
+  });
+};
+
+const getReport = (req, res) => {
+  const id = req.params.id;
+  const reportid = req.params.reportid;
+  fsPromises.readFile("project.json", "utf-8").then((data) => {
+    let json = JSON.parse(data);
+    var arrayLen = json.length;
+    for (var i = 0; i < arrayLen; i++) {
+      if (json[i].id == id) {
+        var arrayLen = json[i].report.length;
+        for (var j = 0; j < arrayLen; j++) {
+          if (json[i].report[j].report_id == reportid) {
+            res.json(json[i].report[j]);
+          }
+        }
+      }
+    }
+  });
+};
+
 module.exports = {
   getProject,
   createProject,
   deleteProject,
-  updateProject
+  updateProject,
+  getOneProject,
+  getReport,
 };

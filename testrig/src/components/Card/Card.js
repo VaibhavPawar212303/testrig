@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import closebutton from "../../images/close.png";
 import Popup from "reactjs-popup";
+
 const deleteProject = (id) => {
   fetch(`http://localhost:5000/api/project/${id}`, {
     method: "DELETE",
@@ -12,6 +13,11 @@ const deleteProject = (id) => {
   }).then((response) => {
     return response.json();
   });
+};
+
+//get the card and navigates to the details page
+const goToDetails = (project_id) => {
+  localStorage.setItem("projectID", project_id);
 };
 
 const Card = ({ project_id, project_name, project_Description }) => {
@@ -52,8 +58,10 @@ const Card = ({ project_id, project_name, project_Description }) => {
       return response.json();
     });
   };
+
   return (
     <div class="mt-20 w-48 h-48 rounded shadow-xl" key={project_id}>
+      {/* click the button and delete the project */}
       <button
         onClick={() => deleteProject(project_id)}
         className="absolute ml-2 mt-4"
@@ -62,12 +70,20 @@ const Card = ({ project_id, project_name, project_Description }) => {
           <img src={closebutton} height={14} width={14} />
         </a>
       </button>
-      <div class="px-3 py-4" key={project_id}>
-        <div class="flex flex-col font-bold mb-2 items-center">
-          {project_name}
-        </div>
-        <div class="text-gray-700 mb-2">{project_Description}</div>
+      {/* -----------------------Card body ---------------------- */}
+      <div
+        class="px-3 py-4"
+        key={project_id}
+        onClick={() => goToDetails(project_id)}
+      >
+        <a href="/projectDetails">
+          <div class="flex flex-col font-bold mb-2 items-center">
+            {project_name}
+          </div>
+          <div class="text-gray-700 mb-2">{project_Description}</div>
+        </a>
       </div>
+
       <Popup
         key={project_id}
         position="right"
@@ -130,6 +146,7 @@ const Card = ({ project_id, project_name, project_Description }) => {
           </form>
         )}
       </Popup>
+      {/* -----------------------Card body ---------------------- */}
     </div>
   );
 };

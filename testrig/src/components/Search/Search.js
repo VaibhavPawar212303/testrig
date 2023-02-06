@@ -3,11 +3,6 @@ import Card from "../Card/Card";
 
 function Search({ projects }) {
   const [search, setSearch] = useState("");
-  console.log(
-    projects.filter((project) =>
-      project.projectName.toLowerCase().includes(search)
-    )
-  );
   return (
     <div>
       <div class="max-w-md mx-auto mt-28 mr-36">

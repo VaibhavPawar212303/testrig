@@ -21,7 +21,6 @@ export default class Projects extends Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         this.setState({
           items: data.projectData,
           DataisLoaded: true,
