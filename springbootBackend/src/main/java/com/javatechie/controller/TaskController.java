@@ -17,7 +17,7 @@ public class TaskController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Task createTask(@RequestBody Task task){
+    public Task createTask(@RequestBody Task task) {
         return service.addTask(task);
     }
 
@@ -28,27 +28,27 @@ public class TaskController {
 
 
     @GetMapping("/{taskId}")
-    public Task getTask(@PathVariable String taskId){
+    public Task getTask(@PathVariable String taskId) {
         return service.getTaskByTaskId(taskId);
     }
 
     @GetMapping("/severity/{severity}")
-    public List<Task> findTaskUsingSeverity(@PathVariable int severity){
+    public List<Task> findTaskUsingSeverity(@PathVariable int severity) {
         return service.getTaskBySeverity(severity);
     }
 
     @GetMapping("/assignee/{assignee}")
-    public List<Task> getTaskByAssignee(@PathVariable String assignee){
+    public List<Task> getTaskByAssignee(@PathVariable String assignee) {
         return service.getTaskByAssignee(assignee);
     }
 
     @PutMapping
-    public Task modifyTask(@RequestBody Task task){
+    public Task modifyTask(@RequestBody Task task) {
         return service.updateTask(task);
     }
 
     @DeleteMapping("delete/{taskId}")
-    public String deleteTask(@PathVariable String taskId){
+    public String deleteTask(@PathVariable String taskId) {
         return service.deleteTask(taskId);
     }
 }

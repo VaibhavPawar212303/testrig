@@ -15,16 +15,18 @@ public class ProjectService {
     @Autowired
     private ProjectRepository repository;
 
-    public Project addProject(Project project){
-        String projectName=project.getProject_Name();
+    @Autowired
+    private BuildService service;
+
+    public Project addProject(Project project) {
+        String projectName = project.getProject_Name();
         String projectId;
-        if(Objects.isNull(repository.findProjectName(projectName))) {
+        if (Objects.isNull(repository.findProjectName(projectName))) {
             project.setProject_Id(UUID.randomUUID().toString().split("-")[0]);
             String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
             project.setProject_createdDate(timeStamp);
             return repository.save(project);
-        }
-        else {
+        } else {
             projectId = repository.findProjectName(projectName).getProject_Id();
             return Optional.ofNullable(repository.findProjectName("")).orElseThrow(() -> new ApiForbiddenException("Project Name : " + projectName + " all ready exits. And ProjectId is " + projectId));
         }
@@ -33,15 +35,19 @@ public class ProjectService {
     public List<Project> findAllProjects() {
         return repository.findAll();
     }
-    public Project getProjectByProjectId(String projectID){
-            return repository.findById(projectID).orElseThrow(()-> new ApiRequestException("ProjectID :"+projectID+" doesn't exits."));
+
+    public Project getProjectByProjectId(String projectID) {
+        return repository.findById(projectID).orElseThrow(() -> new ApiRequestException("ProjectID :" + projectID + " doesn't exits."));
     }
-    public Project getProjectsByProjectName(String projectName){
-        return Optional.ofNullable(repository.findProjectName(projectName)).orElseThrow(()-> new ApiRequestException("Project Name : "+projectName+" doesn't exits."));
+
+    public Project getProjectsByProjectName(String projectName) {
+        return Optional.ofNullable(repository.findProjectName(projectName)).orElseThrow(() -> new ApiRequestException("Project Name : " + projectName + " doesn't exits."));
     }
-    public String deleteProject(String projectId){
-            getProjectByProjectId(projectId);
-            repository.deleteById(projectId);
-            return projectId + " task deleted from dashboard ";
+
+    public String deleteProject(String projectId) {
+        Project project = getProjectByProjectId(projectId);
+        repository.deleteById(projectId);
+        service.deleteByProjectName(project.getProject_Name());
+        return " Project deleted from dashboard ";
     }
 }

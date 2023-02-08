@@ -8,8 +8,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class SpringbbotMongoAtlasApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbbotMongoAtlasApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbbotMongoAtlasApplication.class, args);
+    }
 }

@@ -1,16 +1,13 @@
 package com.javatechie.controller;
 
-import com.javatechie.Exception.ApiRequestException;
 import com.javatechie.model.Project;
 import com.javatechie.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/project")
@@ -20,7 +17,7 @@ public class ProjectController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Project createProject(@RequestBody @Valid Project project){
+    public Project createProject(@RequestBody @Valid Project project) {
         return service.addProject(project);
     }
 
@@ -30,17 +27,17 @@ public class ProjectController {
     }
 
     @GetMapping("/{projectId}")
-    public Project getProjectByProjectId(@PathVariable String projectId){
-            return service.getProjectByProjectId(projectId);
+    public Project getProjectByProjectId(@PathVariable String projectId) {
+        return service.getProjectByProjectId(projectId);
     }
 
     @GetMapping("/projectName/{projectName}")
-    public Project getProjectByProjectName(@PathVariable String projectName){
+    public Project getProjectByProjectName(@PathVariable String projectName) {
         return service.getProjectsByProjectName(projectName);
     }
 
     @DeleteMapping("/deleteProject/{projectId}")
     public String deleteProject(@PathVariable String projectId) {
-            return service.deleteProject(projectId);
+        return service.deleteProject(projectId);
     }
 }
