@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PieCharts from "../Charts/PieCharts";
+import BugMeter from "../Charts/BugMeter";
 import Timeline from "../Timeline/Timeline";
 
 //get the project report by it's id
@@ -43,7 +43,7 @@ export default class ProjectDetails extends Component {
 
     return (
       <div>
-        <PieCharts />
+        <BugMeter />
         {items.report.map((build) => {
           return (
             <div key={build.report_id}>

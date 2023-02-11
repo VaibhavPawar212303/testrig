@@ -10,7 +10,8 @@
         "build_date": "20/10/2021",
         "total_test": 30,
         "total_test_pass": 18,
-        "total_test_fail": 12
+        "total_test_fail": 12,
+        "total_test_parallel":30
       },
       {
         "report_id": 2,
@@ -18,7 +19,8 @@
         "build_date": "20/1/2022",
         "total_test": 40,
         "total_test_pass": 40,
-        "total_test_fail": 0
+        "total_test_fail": 0,
+        "total_test_parallel":0
       },
       {
         "report_id": 3,
@@ -26,7 +28,8 @@
         "build_date": "20/6/2023",
         "total_test": 30,
         "total_test_pass": 18,
-        "total_test_fail": 12
+        "total_test_fail": 12,
+        "total_test_parallel":30
       },
       {
         "report_id": 4,
@@ -34,7 +37,8 @@
         "build_date": "23/6/2023",
         "total_test": 30,
         "total_test_pass": 18,
-        "total_test_fail": 12
+        "total_test_fail": 12,
+        "total_test_parallel":30
       },
       {
         "report_id": 5,
@@ -42,7 +46,8 @@
         "build_date": "20/7/2023",
         "total_test": 30,
         "total_test_pass": 18,
-        "total_test_fail": 12
+        "total_test_fail": 12,
+        "total_test_parallel":30
       }
     ]
   },
@@ -50,42 +55,112 @@
     "id": 2,
     "projectName": "Operence",
     "projectDesc": "This application related to the ecommerce",
-    "report": []
+    "report": [
+      {
+        "report_id": 1,
+        "build_name": "Regression suit",
+        "build_date": "20/10/2021",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12,
+        "total_test_parallel":0
+      }
+    ]
   },
   {
     "id": 3,
     "projectName": "Tracking owl",
     "projectDesc": "This application related to health",
-    "report": []
+    "report": [
+      {
+        "report_id": 1,
+        "build_name": "Regression suit",
+        "build_date": "20/10/2021",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12,
+        "total_test_parallel":0
+      }
+    ]
   },
   {
     "id": 4,
     "projectName": "CoreCard",
     "projectDesc": "This application related to the ecommerce",
-    "report": []
+    "report": [
+      {
+        "report_id": 1,
+        "build_name": "Regression suit",
+        "build_date": "20/10/2021",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12,
+        "total_test_parallel":0
+      }
+    ]
   },
   {
     "id": 5,
     "projectName": "Javier",
     "projectDesc": "Application related to the education",
-    "report": []
+    "report": [
+      {
+        "report_id": 1,
+        "build_name": "Regression suit",
+        "build_date": "20/10/2021",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12,
+        "total_test_parallel":0
+      }
+    ]
   },
   {
     "id": 6,
     "projectName": "Timesuit",
     "projectDesc": "This application related to the ecommerce",
-    "report": []
+    "report": [
+      {
+        "report_id": 1,
+        "build_name": "Regression suit",
+        "build_date": "20/10/2021",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12,
+        "total_test_parallel":0
+      }
+    ]
   },
   {
     "id": 7,
     "projectName": "Test",
     "projectDesc": "Demo project created for testing",
-    "report": []
+    "report": [
+      {
+        "report_id": 1,
+        "build_name": "Regression suit",
+        "build_date": "20/10/2021",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12,
+        "total_test_parallel":0
+      }
+    ]
   },
   {
     "id": 8,
     "projectName": "Test",
     "projectDesc": "Application related to the test",
-    "report": []
+    "report": [
+      {
+        "report_id": 1,
+        "build_name": "Regression suit",
+        "build_date": "20/10/2021",
+        "total_test": 30,
+        "total_test_pass": 18,
+        "total_test_fail": 12,
+        "total_test_parallel":0
+      }
+    ]
   }
 ]

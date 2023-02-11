@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
-app.use("/api/project", require("../backhend/Routes/projectRoute"));
+app.use("testrig.onrender.com/api/project", require("../backhend/Routes/projectRoute"));
 app.use(errorHandler);
 //app listen on port
 app.listen(PORT, () => {
