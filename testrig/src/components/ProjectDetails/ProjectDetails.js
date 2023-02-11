@@ -17,7 +17,7 @@ export default class ProjectDetails extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:5000/api/project/getproject/${id}`, {
+    fetch(`https://testrig.onrender.com/api/project/getproject/${id}`, {
       method: "GET",
     })
       .then((response) => {

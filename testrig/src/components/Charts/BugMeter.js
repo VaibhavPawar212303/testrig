@@ -8,7 +8,7 @@ function BugMeter() {
   const [build, setBuild] = useState("");
 
   fetch(
-    `http://localhost:5000/api/project/getreport/${projectID}/${selectedBuild}`,
+    `https://testrig.onrender.com/api/project/getreport/${projectID}/${selectedBuild}`,
     {
       method: "GET",
       mode: "cors",
