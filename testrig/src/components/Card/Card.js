@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import closebutton from "../../images/close.png";
 import Popup from "reactjs-popup";
 
+
 const deleteProject = (id) => {
   fetch(`https://testrig.onrender.com/api/project/${id}`, {
     method: "DELETE",
@@ -58,96 +59,135 @@ const Card = ({ project_id, project_name, project_Description }) => {
       return response.json();
     });
   };
+  const [isOpen, setOpen] = useState(false);
+
+  const handleDropDown = () => {
+    setOpen(!isOpen);
+  };
 
   return (
-    <div class="mt-20 w-48 h-48 rounded shadow-xl" key={project_id}>
-      {/* click the button and delete the project */}
-      <button
-        onClick={() => deleteProject(project_id)}
-        className="absolute ml-2 mt-4"
-      >
-        <a title="close icons">
-          <img src={closebutton} height={14} width={14} />
-        </a>
-      </button>
-      {/* -----------------------Card body ---------------------- */}
-      <div
-        class="px-3 py-4"
-        key={project_id}
-        onClick={() => goToDetails(project_id)}
-      >
-        <a href="/projectDetails">
-          <div class="flex flex-col font-bold mb-2 items-center">
-            {project_name}
-          </div>
-          <div class="text-gray-700 mb-2">{project_Description}</div>
-        </a>
-      </div>
-
-      <Popup
-        key={project_id}
-        position="right"
-        trigger={
+    <>
+      <div class="mt-20 w-80 h-48 rounded shadow-xl" key={project_id}>
+        <div className="dropdown">
           <button
-            type="button"
-            class="ml-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+            onClick={handleDropDown}
           >
-            Update Project
+            <svg
+              className="ml-2 w-4 h-4"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
           </button>
-        }
-      >
-        {(close) => (
-          <form onSubmit={handleSubmit} className="backdrop-blur-lg">
-            <div className="flex flex-col items-center shadow-2xl shadow-black-300 h-96 w-96 mt-8 font-sans text-lg">
-              <button onClick={() => close()} className="absolute ml-80 mt-4">
-                <a title="close icons">
-                  <img src={closebutton} height={20} width={20} />
+
+          <div
+            id="dropdown"
+            className={`z-10 w-44 bg-white rounded divide-y ${
+              isOpen ? "block" : "hidden"
+            }`}
+          >
+            <ul className="absolute z-15 w-20 rounded-md bg-slate-100 h-20 mt-2 drop-shadow-2xl">
+              <li>
+                <a
+                  class="px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                  {" "}
+                  <button
+                    onClick={() => deleteProject(project_id)}
+                    className="absolute mt-2 cursor-pointer"
+                  >
+                    Delete
+                  </button>
                 </a>
-              </button>
-              <div className="mb-4 mt-16">Update Project</div>
-              <div
-                className="mb-4 ml-2 flex flex-col items-center z-10"
-                id="projectname"
-              >
-                Update Project Name
-                <input
-                  type="text"
-                  className="h-10 border-b-4"
-                  placeholder="Enter your project name"
-                  name="projectName"
-                  value={projectDetails.projectName}
-                  onChange={handleChange}
-                ></input>
-              </div>
-              <div
-                className="mb-4 ml-2 flex flex-col items-center "
-                id="projectname"
-              >
-                Describe Your Project
-                <input
-                  type="text"
-                  className="h-10 border-b-4"
-                  name="projectDesc"
-                  placeholder="Enter your project name"
-                  value={projectDetails.projectDesc}
-                  onChange={handleChange}
-                ></input>
-              </div>
-              <button
-                type="submit"
-                class="text-white w-44 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                onClick={() => {
-                  updateProject(project_id);
-                }}
-              >
-                Update Project
-              </button>
+              </li>
+              <li>
+                <Popup
+                  key={project_id}
+                  position="right"
+                  trigger={<a className="absolute ml-4 mt-4 cursor-pointer"> Update</a>}
+                >
+                  {(close) => (
+                    <form onSubmit={handleSubmit} className="bg-white drop-shadow-2xl">
+                      <div className="flex flex-col items-center h-96 w-96 mt-8 font-sans text-lg">
+                        <button
+                          onClick={() => close()}
+                          className="absolute ml-80 mt-4"
+                        >
+                          <a title="close icons">
+                            <img src={closebutton} height={20} width={20} />
+                          </a>
+                        </button>
+                        <div className="mb-4 mt-16">Update Project</div>
+                        <div
+                          className="mb-4 ml-2 flex flex-col items-center z-10"
+                          id="projectname"
+                        >
+                          Update Project Name
+                          <input
+                            type="text"
+                            className="h-10 border-b-4"
+                            placeholder="Enter your project name"
+                            name="projectName"
+                            value={projectDetails.projectName}
+                            onChange={handleChange}
+                          ></input>
+                        </div>
+                        <div
+                          className="mb-4 ml-2 flex flex-col items-center "
+                          id="projectname"
+                        >
+                          Describe Your Project
+                          <input
+                            type="text"
+                            className="h-10 border-b-4"
+                            name="projectDesc"
+                            placeholder="Enter your project name"
+                            value={projectDetails.projectDesc}
+                            onChange={handleChange}
+                          ></input>
+                        </div>
+                        <button
+                          type="submit"
+                          class="text-white w-44 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                          onClick={() => {
+                            updateProject(project_id);
+                          }}
+                        >
+                          Update Project
+                        </button>
+                      </div>
+                    </form>
+                  )}
+                </Popup>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/* -----------------------Card body ---------------------- */}
+        <div
+          class="px-3 py-4"
+          key={project_id}
+          onClick={() => goToDetails(project_id)}
+        >
+          <a href="/projectDetails">
+            <div class="flex flex-col font-bold mb-2 items-center ml-20 w-40">
+              {project_name}
             </div>
-          </form>
-        )}
-      </Popup>
-      {/* -----------------------Card body ---------------------- */}
-    </div>
+            <div class="text-gray-700 mb-2 ml-20">{project_Description}</div>
+          </a>
+        </div>
+      </div>
+    </>
   );
 };
 
