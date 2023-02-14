@@ -40,8 +40,7 @@ export default class Projects extends Component {
 
     return (
       <div>
-        <Navbar />
-        <Search projects={items} />
+        <Navbar items={items} />
       </div>
     );
   }

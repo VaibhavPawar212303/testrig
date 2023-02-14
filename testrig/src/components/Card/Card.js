@@ -67,7 +67,7 @@ const Card = ({ project_id, project_name, project_Description }) => {
 
   return (
     <>
-      <div class="mt-20 w-80 h-48 rounded shadow-xl" key={project_id}>
+      <div class="mt-32 w-80 h-48 rounded shadow-xl mr-10" key={project_id}>
         <div className="dropdown">
           <button
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
@@ -175,12 +175,12 @@ const Card = ({ project_id, project_name, project_Description }) => {
         </div>
         {/* -----------------------Card body ---------------------- */}
         <div
-          class="px-3 py-4"
+          className="px-3 py-4"
           key={project_id}
           onClick={() => goToDetails(project_id)}
         >
           <a href="/projectDetails">
-            <div class="flex flex-col font-bold mb-2 items-center ml-20 w-40">
+            <div class="flex flex-col font-bold mb-2 items-center ml-10 w-40">
               {project_name}
             </div>
             <div class="text-gray-700 mb-2 ml-20">{project_Description}</div>
