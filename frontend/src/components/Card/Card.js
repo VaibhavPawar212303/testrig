@@ -74,7 +74,7 @@ const Card = ({ project_id, project_name, project_Description }) => {
             onClick={handleDropDown}
           >
             <svg
-              className="ml-2 w-4 h-4"
+              className="w-4 h-4"
               aria-hidden="true"
               fill="none"
               stroke="currentColor"
