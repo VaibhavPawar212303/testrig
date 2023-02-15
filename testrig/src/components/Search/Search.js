@@ -5,7 +5,7 @@ function Search({ projects }) {
   const [search, setSearch] = useState("");
   return (
     <div>
-      <div class="max-w-md mx-auto mr-36">
+      <div class="max-w-md mx-auto mr-72">
         <div class="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
           <div class="grid place-items-center h-full w-12 text-gray-300">
             <svg
@@ -34,7 +34,7 @@ function Search({ projects }) {
           />
         </div>
       </div>
-      <div className="absolute ml-20 grid grid-rows-2 grid-flow-col">
+      <div className="ml-22 grid grid-rows-2 grid-flow-col">
         {projects
           .filter((project) =>
             project.projectName.toLowerCase().includes(search)

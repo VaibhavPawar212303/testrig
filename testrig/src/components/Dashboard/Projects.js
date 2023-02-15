@@ -40,7 +40,10 @@ export default class Projects extends Component {
 
     return (
       <div>
-        <Navbar items={items} />
+        <Navbar />
+        <div className="ml-20 mt-5">
+          <Search projects={items} />
+        </div>
       </div>
     );
   }
