@@ -16,7 +16,7 @@ function Timeline({ buildName, buildDate, buildId }) {
         <ol className="relative border-l border-gray-200 mt-10 ml-20 dark:border-gray-700 float-right col-start-3">
           <li
             className="mb-10 ml-6"
-            onClick={() => {
+            onClick={() => { 
               refreshPage();
             }}
           >
