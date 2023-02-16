@@ -72,10 +72,10 @@ function BugMeter() {
         </h1>
         <hr />
       </div>
-      <div className="ml-10">
+      <div className="">
         <div className="max-w-sm rounded overflow-hidden shadow-lg absolute mt-10 ml-12 w-44 h-40 flex flex-row items-center">
           <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2 flex flex-row items-center ml-4">
+            <div className="font-bold text-sm mb-2 flex flex-row items-center ml-4">
               Total Test
             </div>
             <p className="text-gray-700 flex flex-col items-center text-xl">
@@ -85,10 +85,10 @@ function BugMeter() {
         </div>
         <div className="max-w-sm rounded overflow-hidden shadow-lg absolute mt-10 ml-60 w-52 h-40 flex flex-row items-center">
           <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2 flex flex-row items-center ml-4">
+            <div className="font-bold text-sm mb-2 flex flex-row items-center ml-4">
               Total Test Pass
             </div>
-            <p className="text-green-700 flex flex-col items-center text-xl">
+            <p className="text-green-700 flex flex-col items-center text-sm">
               {testPass}
             </p>
           </div>
@@ -99,7 +99,7 @@ function BugMeter() {
               <div className="font-bold text-xl mb-2 flex flex-row items-center ml-2">
                 Total Test Fail
               </div>
-              <p className="text-red-700 flex flex-col items-center text-xl">
+              <p className="text-red-700 flex flex-col items-center text-sm">
                 {testFail}
               </p>
             </div>
@@ -108,23 +108,23 @@ function BugMeter() {
         <div className="ml-72">
           <div className="max-w-sm rounded overflow-hidden shadow-lg absolute mt-10 ml-96 w-50 h-40 flex flex-row items-center">
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2 flex flex-row items-center ml-2">
+              <div className="font-bold text-sm mb-2 flex flex-row items-center ml-2">
                 Parallel Execution Test
               </div>
-              <p className="text-yellow-700 flex flex-col items-center text-xl">
+              <p className="text-yellow-700 flex flex-col items-center text-sm">
                 {testParallel}
               </p>
             </div>
           </div>
         </div>
         <div className="ml-72">
-          <div className="ml-72">
+          <div className="ml-60">
             <div className="max-w-sm rounded overflow-hidden shadow-lg absolute mt-10 ml-96 w-50 h-40 flex flex-row items-center">
               <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2 flex flex-row items-center ml-2">
+                <div className="font-bold text-sm mb-2 flex flex-row items-center ml-2">
                   Test Average
                 </div>
-                <p className="text-blue-700 flex flex-col items-center text-xl">
+                <p className="text-blue-700 flex flex-col items-center text-sm">
                   {testAverage}
                 </p>
               </div>
@@ -133,7 +133,7 @@ function BugMeter() {
         </div>
       </div>
       <div className="absolute mt-64 ml-20 w-80">
-        <h1 className="text-xl">Test Meter</h1>
+        <h1 className="text-sm">Test Meter</h1>
         <div className="mt-10">
           <RadialBarChart
             width={570}

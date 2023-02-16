@@ -57,7 +57,7 @@ function Piechart() {
   ];
   return (
     <div className="absolute">
-     <h1 className="text-xl">Compare Build</h1>
+     <h1 className="text-sm">Compare Build</h1>
       <PieChart width={330} height={250}>
         <Pie
           data={data01}

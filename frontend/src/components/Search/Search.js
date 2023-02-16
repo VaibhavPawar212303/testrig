@@ -34,7 +34,7 @@ function Search({ projects }) {
           />
         </div>
       </div>
-      <div className="ml-22 grid grid-rows-2 grid-flow-col">
+      <div className="grid grid-rows-3 grid-flow-col mb-10">
         {projects
           .filter((project) =>
             project.projectName.toLowerCase().includes(search)

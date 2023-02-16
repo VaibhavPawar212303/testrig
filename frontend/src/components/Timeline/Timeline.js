@@ -12,7 +12,7 @@ function Timeline({ buildName, buildDate, buildId }) {
 
   return (
     <>
-      <div className="grid grid-cols-3 h-4 w-22 ml-96 mr-2 mb-40">
+      <div className="grid grid-cols-3 h-4 w-22 ml-96 mr-2 mb-44">
         <ol className="relative border-l border-gray-200 mt-10 ml-20 dark:border-gray-700 float-right col-start-3">
           <li
             className="mb-10 ml-6"
@@ -42,7 +42,7 @@ function Timeline({ buildName, buildDate, buildId }) {
             <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
               {buildDate}
             </time>
-            <p className="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+            <p className="mb-5 text-sm font-normal text-gray-500 dark:text-gray-400">
               Get access to over 20+ pages including a dashboard layout, charts,
               kanban board, calendar, and pre-order E-commerce & Marketing
               pages.

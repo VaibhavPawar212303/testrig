@@ -4,7 +4,7 @@ function Navbar({ items }) {
   return (
     <>
      
-        <div class="absolute container flex flex-wrap items-center justify-between mx-auto ml-32">
+        <div class="absolute container flex flex-wrap items-center justify-between mx-auto ml-10">
           <div className="">
             <a class="flex items-center">
               <img
