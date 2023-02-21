@@ -42,20 +42,25 @@ export default class ProjectDetails extends Component {
       );
 
     return (
-      <div>
-        <BugMeter />
-        {items.report.map((build) => {
-          return (
-            <div key={build.report_id}>
-              <Timeline
-                buildId = {build.report_id}
-                buildName={build.build_name}
-                buildDate={build.build_date}
-              />
-            </div>
-          );
-        })}
-      </div>
+      <>
+        <div>
+          <BugMeter />
+          {items.report.map((build) => {
+            return (
+              <div key={build.report_id}>
+                <Timeline
+                  buildId={build.report_id}
+                  buildName={build.build_name}
+                  buildDate={build.build_date}
+                />
+              </div>
+            );
+          })}
+        </div>
+        <div>
+
+        </div>
+      </>
     );
   }
 }

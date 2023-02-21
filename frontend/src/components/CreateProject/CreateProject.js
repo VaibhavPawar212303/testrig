@@ -22,7 +22,7 @@ function CreateProject() {
   };
 
   const createProject = (event) => {
-    fetch("https://testrig.onrender.com/api/project", {
+    fetch("https://943d-103-176-135-27.in.ngrok.io/api/project", {
       method: "POST",
       mode: "cors",
       headers: {
@@ -128,7 +128,7 @@ function CreateProject() {
       ease-in-out"
             onClick={createProject}
           >
-            <a href="/project"> Create Project</a>
+            Create Project
           </button>
         </form>
       </div>

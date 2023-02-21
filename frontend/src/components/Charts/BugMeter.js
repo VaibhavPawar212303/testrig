@@ -8,7 +8,7 @@ function BugMeter() {
   const [build, setBuild] = useState("");
 
   fetch(
-    `https://testrig.onrender.com/api/project/getreport/${projectID}/${selectedBuild}`,
+    `https://943d-103-176-135-27.in.ngrok.io/api/project/getreport/${projectID}/${selectedBuild}`,
     {
       method: "GET",
       mode: "cors",
@@ -62,14 +62,23 @@ function BugMeter() {
   return (
     <>
       <div>
-        <h1 className="flex flex-col items-center mt-5 text-2xl">
-          <a
-            className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
-            aria-current="page"
-          >
-            {build.build_name}
-          </a>
-        </h1>
+        <a href="/project" class="flex mt-3 ml-10">
+          <img
+            src="https://www.testrigtechnologies.com/wp-content/uploads/2020/05/logo-9.png"
+            class="h-1 mr-3 sm:h-9"
+            alt="TestRig Logo"
+          />
+        </a>
+        <div className="ml-80">
+        <h1 className="ml-96 text-2xl mb-4">
+            <a
+              className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+              aria-current="page"
+            >
+              {build.build_name}
+            </a>
+          </h1>
+        </div>
         <hr />
       </div>
       <div className="">
@@ -78,7 +87,7 @@ function BugMeter() {
             <div className="font-bold text-sm mb-2 flex flex-row items-center ml-4">
               Total Test
             </div>
-            <p className="text-gray-700 flex flex-col items-center text-xl">
+            <p className="text-gray-700 flex flex-col items-center text-sm">
               {totalTest}
             </p>
           </div>
@@ -96,7 +105,7 @@ function BugMeter() {
         <div className="ml-20">
           <div className="max-w-sm rounded overflow-hidden shadow-lg absolute mt-10 ml-96 w-50 h-40 flex flex-row items-center">
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2 flex flex-row items-center ml-2">
+              <div className="font-bold text-sm mb-2 flex flex-row items-center ml-2">
                 Total Test Fail
               </div>
               <p className="text-red-700 flex flex-col items-center text-sm">
@@ -165,9 +174,9 @@ function BugMeter() {
         </div>
       </div>
       <div className="absolute mt-64 ml-96">
-      <div className="ml-96">
-      <Piechart/>
-      </div>
+        <div className="ml-96">
+          <Piechart />
+        </div>
       </div>
     </>
   );

@@ -34,16 +34,16 @@ function Search({ projects }) {
           />
         </div>
       </div>
-      <div className="grid grid-rows-3 grid-flow-col mb-10">
+      <div className="grid grid-rows-2 grid-flow-col mb-10">
         {projects
           .filter((project) =>
-            project.projectName.toLowerCase().includes(search)
+            project.pro_name.toLowerCase().includes(search)
           )
           .map((project) => (
             <Card
               project_id={project.id}
-              project_name={project.projectName}
-              project_Description={project.projectDesc}
+              project_name={project.pro_name}
+              project_Description={project.pro_desc}
             />
           ))}
       </div>

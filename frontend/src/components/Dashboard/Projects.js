@@ -14,16 +14,15 @@ export default class Projects extends Component {
   }
 
   componentDidMount() {
-    fetch("https://testrig.onrender.com/api/project", {
-      method: "GET",
+    fetch("http://localhost:5000/api/project/", {
+      method: "GET"
     })
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
+        console.log(data.result)
         this.setState({
-          items: data.projectData,
-          DataisLoaded: true,
+          items: data.result,
+          DataisLoaded: true, 
         });
       });
   }

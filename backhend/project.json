@@ -6,7 +6,7 @@
     "report": [
       {
         "report_id": 1,
-        "build_name": "Regression suit",
+        "build_name": "Regression Suite",
         "build_date": "20/10/2021",
         "total_test": 30,
         "total_test_pass": 18,
@@ -15,7 +15,7 @@
       },
       {
         "report_id": 2,
-        "build_name": "smoke suit",
+        "build_name": "Smoke Suite",
         "build_date": "20/1/2022",
         "total_test": 40,
         "total_test_pass": 40,
@@ -24,7 +24,7 @@
       },
       {
         "report_id": 3,
-        "build_name": "visual suit",
+        "build_name": "Visual Suite",
         "build_date": "20/6/2023",
         "total_test": 30,
         "total_test_pass": 18,
@@ -33,7 +33,7 @@
       },
       {
         "report_id": 4,
-        "build_name": "Regression suit",
+        "build_name": "Regression Suite",
         "build_date": "23/6/2023",
         "total_test": 30,
         "total_test_pass": 18,
@@ -42,7 +42,7 @@
       },
       {
         "report_id": 5,
-        "build_name": "Smoke suit",
+        "build_name": "Smoke Suite",
         "build_date": "20/7/2023",
         "total_test": 30,
         "total_test_pass": 18,
@@ -58,7 +58,7 @@
     "report": [
       {
         "report_id": 1,
-        "build_name": "Regression suit",
+        "build_name": "Regression Suite",
         "build_date": "20/10/2021",
         "total_test": 30,
         "total_test_pass": 18,
@@ -74,7 +74,7 @@
     "report": [
       {
         "report_id": 1,
-        "build_name": "Regression suit",
+        "build_name": "Regression Suite",
         "build_date": "20/10/2021",
         "total_test": 30,
         "total_test_pass": 18,
@@ -90,7 +90,7 @@
     "report": [
       {
         "report_id": 1,
-        "build_name": "Regression suit",
+        "build_name": "Regression Suite",
         "build_date": "20/10/2021",
         "total_test": 30,
         "total_test_pass": 18,
@@ -106,7 +106,7 @@
     "report": [
       {
         "report_id": 1,
-        "build_name": "Regression suit",
+        "build_name": "Regression Suite",
         "build_date": "20/10/2021",
         "total_test": 30,
         "total_test_pass": 18,
@@ -122,7 +122,7 @@
     "report": [
       {
         "report_id": 1,
-        "build_name": "Regression suit",
+        "build_name": "Regression Suite",
         "build_date": "20/10/2021",
         "total_test": 30,
         "total_test_pass": 18,
@@ -138,7 +138,7 @@
     "report": [
       {
         "report_id": 1,
-        "build_name": "Regression suit",
+        "build_name": "Regression Suite",
         "build_date": "20/10/2021",
         "total_test": 30,
         "total_test_pass": 18,
@@ -154,7 +154,7 @@
     "report": [
       {
         "report_id": 1,
-        "build_name": "Regression suit",
+        "build_name": "Regression Suite",
         "build_date": "20/10/2021",
         "total_test": 30,
         "total_test_pass": 18,

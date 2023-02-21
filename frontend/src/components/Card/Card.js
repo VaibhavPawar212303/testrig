@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import closebutton from "../../images/close.png";
 import Popup from "reactjs-popup";
 
 
 const deleteProject = (id) => {
-  fetch(`https://testrig.onrender.com/api/project/${id}`, {
+  fetch(`https://943d-103-176-135-27.in.ngrok.io/api/project/${id}`, {
     method: "DELETE",
     mode: "cors",
     headers: {
@@ -44,7 +43,7 @@ const Card = ({ project_id, project_name, project_Description }) => {
   };
 
   const updateProject = (id) => {
-    fetch(`https://testrig.onrender.com/api/project/${id}`, {
+    fetch(`https://6ae2-103-176-135-27.in.ngrok.io/api/project/${id}`, {
       method: "PUT",
       mode: "cors",
       headers: {
@@ -123,9 +122,6 @@ const Card = ({ project_id, project_name, project_Description }) => {
                           onClick={() => close()}
                           className="absolute ml-80 mt-4"
                         >
-                          <a title="close icons">
-                            <img src={closebutton} height={20} width={20} />
-                          </a>
                         </button>
                         <div className="mb-4 mt-16">Update Project</div>
                         <div
