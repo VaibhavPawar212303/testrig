@@ -22,7 +22,7 @@ function CreateProject() {
   };
 
   const createProject = (event) => {
-    fetch("http://localhost:5000/api/project", {
+    fetch("https://testrig.onrender.com/api/project", {
       method: "POST",
       mode: "cors",
       headers: {

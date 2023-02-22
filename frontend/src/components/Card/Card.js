@@ -3,7 +3,7 @@ import Popup from "reactjs-popup";
 
 
 const deleteProject = (id) => {
-  fetch(`http://localhost:5000/api/project/${id}`, {
+  fetch(`https://testrig.onrender.com/api/project/${id}`, {
     method: "DELETE",
     mode: "cors",
     headers: {
@@ -43,7 +43,7 @@ const Card = ({ project_id, project_name, project_Description }) => {
   };
 
   const updateProject = (id) => {
-    fetch(`http://localhost:5000/api/project/${id}`, {
+    fetch(`https://testrig.onrender.com/api/project/${id}`, {
       method: "PUT",
       mode: "cors",
       headers: {
