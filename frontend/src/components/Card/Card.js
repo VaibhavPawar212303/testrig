@@ -3,7 +3,7 @@ import Popup from "reactjs-popup";
 
 
 const deleteProject = (id) => {
-  fetch(`https://943d-103-176-135-27.in.ngrok.io/api/project/${id}`, {
+  fetch(`http://localhost:5000/api/project/${id}`, {
     method: "DELETE",
     mode: "cors",
     headers: {
@@ -43,7 +43,7 @@ const Card = ({ project_id, project_name, project_Description }) => {
   };
 
   const updateProject = (id) => {
-    fetch(`https://6ae2-103-176-135-27.in.ngrok.io/api/project/${id}`, {
+    fetch(`http://localhost:5000/api/project/${id}`, {
       method: "PUT",
       mode: "cors",
       headers: {

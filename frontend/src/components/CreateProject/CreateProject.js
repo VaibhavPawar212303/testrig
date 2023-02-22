@@ -22,7 +22,7 @@ function CreateProject() {
   };
 
   const createProject = (event) => {
-    fetch("https://943d-103-176-135-27.in.ngrok.io/api/project", {
+    fetch("http://localhost:5000/api/project", {
       method: "POST",
       mode: "cors",
       headers: {
