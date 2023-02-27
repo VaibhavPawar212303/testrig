@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BarChart,
   XAxis,
@@ -7,59 +7,67 @@ import {
   Tooltip,
   Legend,
   Bar,
+  ResponsiveContainer,
 } from "recharts";
 
-
-const data = [
-  {
-    name: "Build 1",
-    testcases_pass: 4000,
-    testcases_fail: 2000,
-  },
-  {
-    name: "Build 2",
-    testcases_pass: 2000,
-    testcases_fail: 2400,
-  },
-  {
-    name: "Build 3",
-    testcases_pass: 4000,
-    testcases_fail: 2800,
-  },
-  {
-    name: "Build 4",
-    testcases_pass: 3000,
-    testcases_fail: 2400,
-  },
-  {
-    name: "Build 5",
-    testcases_pass: 5000,
-    testcases_fail: 2400,
-  },
-  {
-    name: "Build 1",
-    testcases_pass: 4000,
-    testcases_fail: 2400,
-  },
-];
+//import the test count
+const id = localStorage.getItem("projectID");
 
 function Bars() {
+  //set build
+  const [build, setBuild] = useState("");
+
+  //Get the builds
+  fetch(`http://localhost:5000/api/project/getbuilds/${id}`, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      var builds = data.result;
+      setBuild(builds);
+    });
+
+  const data = [build[0], build[1], build[2], build[3], build[4]];
+  
   return (
     <>
-      <div className="absolute mt-96 ml-70 grid grid-cols-2 w-8/12 mb-3">
-        <div className="col-start-1 ml-72">
-          <h1 className="w-30 text-xl mb-5">TestCases Report</h1>
-          <BarChart width={830} height={350} data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis dataKey="testcases_pass" />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="testcases_pass" fill="#8884d8" />
-            <Bar dataKey="testcases_fail" fill="#82ca9d" />
-          </BarChart>
-        </div>
-      </div>
+      <div className="h-[22rem] bg-white p-4 rounded-sm  flex flex-col flex-1">
+			<strong className="text-gray-700 font-medium">Total Test From Top 5 Builds</strong>
+			<div className="mt-3 w-full flex-1 text-xs">
+				<ResponsiveContainer width="100%" height="100%">
+					<BarChart
+						width={500}
+						height={300}
+						data={data}
+						margin={{
+							top: 20,
+							right: 10,
+							left: -10,
+							bottom: 0
+						}}
+					>
+						<CartesianGrid strokeDasharray="3 3 0 0" vertical={false} />
+						<XAxis dataKey="test_type" />
+						<YAxis />
+						<Tooltip />
+						<Legend />
+						<Bar dataKey="test_pass" fill="#0ea5e9" />
+						<Bar dataKey="test_fail" fill="#ea580c" />
+            <Bar dataKey="test_parallel" fill="#FFBB28" />
+            <Bar dataKey="test_error" fill="#FF8042" />
+            <Bar dataKey="test_stop" fill="#ea8042" />
+            <Bar dataKey="other" fill="#ea8042" />
+					</BarChart>
+				</ResponsiveContainer>
+			</div>
+		</div>
     </>
   );
 }

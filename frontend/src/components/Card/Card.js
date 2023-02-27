@@ -175,7 +175,7 @@ const Card = ({ project_id, project_name, project_Description }) => {
           key={project_id}
           onClick={() => goToDetails(project_id)}
         >
-          <a href="/projectDetails">
+          <a href="/">
             <div class="flex flex-col font-bold mb-2 items-center ml-24 w-10">
               {project_name}
             </div>

@@ -53,9 +53,80 @@ async function deleteProject(req, res) {
   });
 }
 
+async function getBuild(req, res) {
+  const id = req.params.id;
+  var result = await sql`SELECT * FROM builds WHERE pro_id=${id};`;
+  res.status(200).json({
+    result,
+  });
+}
+
+//Test Count
+
+async function getRegressionCount(req, res) {
+  const id = req.params.id;
+  var result =
+    await sql`SELECT test_type,test_pass FROM builds WHERE pro_id=${id} AND test_type='Regression Test';`;
+  res.status(200).json({
+    result,
+  });
+}
+
+async function getVisualCount(req, res) {
+  const id = req.params.id;
+  var result =
+    await sql`SELECT test_type,test_pass FROM builds WHERE pro_id=${id} AND test_type='Visual Test';`;
+  res.status(200).json({
+    result,
+  });
+}
+
+async function getSmokeCount(req, res) {
+  const id = req.params.id;
+  var result =
+    await sql`SELECT test_type,test_pass FROM builds WHERE pro_id=${id} AND test_type='Smoke Test';`;
+  res.status(200).json({
+    result,
+  });
+}
+
+async function getAPICount(req, res) {
+  const id = req.params.id;
+  var result =
+    await sql`SELECT test_type,test_pass FROM builds WHERE pro_id=${id} AND test_type='API Test';`;
+  res.status(200).json({
+    result,
+  });
+}
+
+async function getTestpass(req, res) {
+  const id = req.params.id;
+  var result =
+    await sql`SELECT test_pass,test_fail,test_stop,test_parallel,test_error,test_processing,other FROM builds WHERE pro_id=${id};`;
+  res.status(200).json({
+    result,
+  });
+}
+
+async function getReport(req, res) {
+  const id = req.params.id;
+  var result =
+    await sql`SELECT * FROM reports WHERE build_id=${id};`;
+  res.status(200).json({
+    result,
+  });
+}
+
 module.exports = {
   getProject,
   createProject,
   deleteProject,
   updateProject,
+  getBuild,
+  getTestpass,
+  getRegressionCount,
+  getVisualCount,
+  getAPICount,
+  getSmokeCount,
+  getReport
 };
