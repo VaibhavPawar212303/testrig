@@ -34,7 +34,7 @@ const renderCustomizedLabel = ({
 
 export default function BuyerProfilePieChart() {
   //get the regression build pass data
-  fetch(`http://localhost:5000/api/project/getTestCount/regression/${id}`, {
+  fetch(`https://testrig.onrender.com/api/project/getTestCount/regression/${id}`, {
     method: "GET",
   })
     .then((response) => {
@@ -46,7 +46,7 @@ export default function BuyerProfilePieChart() {
       localStorage.setItem("RegressionPassTestCount", totalRegression);
     });
   //Visual count
-  fetch(`http://localhost:5000/api/project/getTestCount/visual/${id}`, {
+  fetch(`https://testrig.onrender.com/api/project/getTestCount/visual/${id}`, {
     method: "GET",
   })
     .then((response) => {
@@ -58,7 +58,7 @@ export default function BuyerProfilePieChart() {
       localStorage.setItem("VisualPassTestCount", totalVisual);
     });
   //Api count
-  fetch(`http://localhost:5000/api/project/getTestCount/api/${id}`, {
+  fetch(`https://testrig.onrender.com/api/project/getTestCount/api/${id}`, {
     method: "GET",
   })
     .then((response) => {
@@ -70,7 +70,7 @@ export default function BuyerProfilePieChart() {
       localStorage.setItem("ApiPassTestCount", totalApi);
     });
   //Smoke count
-  fetch(`http://localhost:5000/api/project/getTestCount/smoke/${id}`, {
+  fetch(`https://testrig.onrender.com/api/project/getTestCount/smoke/${id}`, {
     method: "GET",
   })
     .then((response) => {

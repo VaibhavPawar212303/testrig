@@ -18,7 +18,7 @@ function Bars() {
   const [build, setBuild] = useState("");
 
   //Get the builds
-  fetch(`http://localhost:5000/api/project/getbuilds/${id}`, {
+  fetch(`https://testrig.onrender.com/api/project/getbuilds/${id}`, {
     method: "GET",
     mode: "cors",
     headers: {

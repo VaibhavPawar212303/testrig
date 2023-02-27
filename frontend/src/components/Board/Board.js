@@ -21,7 +21,7 @@ const Smoke = localStorage.getItem("Smoke");
 
 
 //Regression count
-fetch(`http://localhost:5000/api/project/getTestCount/regression/${id}`, {
+fetch(`https://testrig.onrender.com/api/project/getTestCount/regression/${id}`, {
   method: "GET",
 })
   .then((response) => {
@@ -32,7 +32,7 @@ fetch(`http://localhost:5000/api/project/getTestCount/regression/${id}`, {
     localStorage.setItem("Regression", builds);
   });
 //Visual count
-fetch(`http://localhost:5000/api/project/getTestCount/visual/${id}`, {
+fetch(`https://testrig.onrender.com/api/project/getTestCount/visual/${id}`, {
   method: "GET",
 })
   .then((response) => {
@@ -43,7 +43,7 @@ fetch(`http://localhost:5000/api/project/getTestCount/visual/${id}`, {
     localStorage.setItem("Visual", builds);
   });
 //API count
-fetch(`http://localhost:5000/api/project/getTestCount/api/${id}`, {
+fetch(`https://testrig.onrender.com/api/project/getTestCount/api/${id}`, {
   method: "GET",
 })
   .then((response) => {
@@ -54,7 +54,7 @@ fetch(`http://localhost:5000/api/project/getTestCount/api/${id}`, {
     localStorage.setItem("API", builds);
   });
 //smoke count
-fetch(`http://localhost:5000/api/project/getTestCount/smoke/${id}`, {
+fetch(`https://testrig.onrender.com/api/project/getTestCount/smoke/${id}`, {
   method: "GET",
 })
   .then((response) => {

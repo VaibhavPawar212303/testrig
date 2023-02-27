@@ -4,7 +4,7 @@ const BuildId = localStorage.getItem("Build");
 function RecentReport() {
   const [report, setReport] = useState("");
   //getReport
-  fetch(`http://localhost:5000/api/project/getReport/${BuildId}`, {
+  fetch(`https://testrig.onrender.com/api/project/getReport/${BuildId}`, {
     method: "GET",
     mode: "cors",
     headers: {
