@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Popup from "reactjs-popup";
 
-
 const deleteProject = (id) => {
   fetch(`https://testrig.onrender.com/api/project/${id}`, {
     method: "DELETE",
@@ -97,9 +96,7 @@ const Card = ({ project_id, project_name, project_Description }) => {
           >
             <ul className="absolute z-15 w-20 rounded-md bg-slate-100 h-20 mt-2 drop-shadow-2xl">
               <li>
-                <a
-                  class="px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
+                <a class="px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white">
                   {" "}
                   <button
                     onClick={() => deleteProject(project_id)}
@@ -113,16 +110,20 @@ const Card = ({ project_id, project_name, project_Description }) => {
                 <Popup
                   key={project_id}
                   position="right"
-                  trigger={<a className="absolute ml-4 mt-4 cursor-pointer"> Update</a>}
+                  trigger={
+                    <a className="absolute ml-4 mt-4 cursor-pointer"> Update</a>
+                  }
                 >
                   {(close) => (
-                    <form onSubmit={handleSubmit} className="bg-white drop-shadow-2xl">
+                    <form
+                      onSubmit={handleSubmit}
+                      className="bg-white drop-shadow-2xl"
+                    >
                       <div className="flex flex-col items-center h-96 w-96 mt-8 font-sans text-lg">
                         <button
                           onClick={() => close()}
                           className="absolute ml-80 mt-4"
-                        >
-                        </button>
+                        ></button>
                         <div className="mb-4 mt-16">Update Project</div>
                         <div
                           className="mb-4 ml-2 flex flex-col items-center z-10"
@@ -170,17 +171,23 @@ const Card = ({ project_id, project_name, project_Description }) => {
           </div>
         </div>
         {/* -----------------------Card body ---------------------- */}
-        <div
-          className="px-3 py-4"
-          key={project_id}
-          onClick={() => goToDetails(project_id)}
-        >
-          <a href="/">
-            <div class="flex flex-col font-bold mb-2 items-center ml-24 w-10">
-              {project_name}
+        <div className="">
+          <div className="">
+            <div
+              className="px-3 py-4"
+              key={project_id}
+              onClick={() => goToDetails(project_id)}
+            >
+              <a href="/">
+                <div class="flex flex-row font-bold mb-2 items-center ml-24 w-10">
+                  {project_name}
+                </div>
+                <div class="text-gray-700 mb-2 ml-20">
+                  {project_Description}
+                </div>
+              </a>
             </div>
-            <div class="text-gray-700 mb-2 ml-20">{project_Description}</div>
-          </a>
+          </div>
         </div>
       </div>
     </>

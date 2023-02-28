@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/Navbar";
-import Search from "../Search/Search";
-
+import Footer from "../Footer/Footer";
 export default class Projects extends Component {
   // Constructor
   constructor(props) {
@@ -15,14 +14,14 @@ export default class Projects extends Component {
 
   componentDidMount() {
     fetch("https://testrig.onrender.com/api/project/", {
-      method: "GET"
+      method: "GET",
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.result)
+        console.log(data.result);
         this.setState({
           items: data.result,
-          DataisLoaded: true, 
+          DataisLoaded: true,
         });
       });
   }
@@ -39,9 +38,12 @@ export default class Projects extends Component {
 
     return (
       <div>
-        <Navbar />
-        <div className="ml-20 mt-5">
-          <Search projects={items} />
+        <div>
+          {" "}
+          <Navbar items={items} />
+        </div>
+        <div>
+          <Footer />
         </div>
       </div>
     );

@@ -4,9 +4,9 @@ import Card from "../Card/Card";
 function Search({ projects }) {
   const [search, setSearch] = useState("");
   return (
-    <div>
-      <div class="max-w-md mx-auto mr-72">
-        <div class="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+    <div className="mb-96">
+      <div class="max-w-md mx-auto mr-20">
+        <div class="flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
           <div class="grid place-items-center h-full w-12 text-gray-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -34,20 +34,21 @@ function Search({ projects }) {
           />
         </div>
       </div>
-      <div className="grid grid-rows-2 grid-flow-col mb-10">
-        {projects
-          .filter((project) =>
-            project.pro_name.toLowerCase().includes(search)
-          )
-          .map((project) => (
-            <Card
-              project_id={project.id}
-              project_name={project.pro_name}
-              project_Description={project.pro_desc}
-            />
-          ))}
-      </div>
-    </div>
+
+      <div className="grid grid-cols-4 gap-3 mr-20">
+            {projects
+              .filter((project) =>
+                project.pro_name.toLowerCase().includes(search)
+              )
+              .map((project) => (
+                <Card
+                  project_id={project.id}
+                  project_name={project.pro_name}
+                  project_Description={project.pro_desc}
+                />
+              ))}
+          </div>
+        </div>
   );
 }
 
